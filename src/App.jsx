@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Course from './Pages/Course'
 import WhyChooseUs from './Pages/why-choose-us'
 import Contact from './Pages/Contact'
+import CourseDetails from './Pages/CourseDetails'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Route path='/course' element={<Course />} />
       <Route path='/why-choose-us' element={<WhyChooseUs />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/course/:id' element={<CourseDetails />}  />
     </Routes>
     </main>
 

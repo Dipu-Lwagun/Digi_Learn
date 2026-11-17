@@ -1,14 +1,33 @@
- 
- import Digitalmarketing from "../assets/courseimage/digital-marketing.jpeg";
- import Webdesign from "../assets/courseimage/web.jpeg";
- export const courses = [
+import Digitalmarketing from "../assets/courseimage/digital-marketing.jpeg";
+import Webdesign from "../assets/courseimage/web.jpeg";
+
+const commonFeatures = [
+  "Practical projects",
+  "Expert mentors",
+  "Certificate provided",
+  "100% job support",
+];
+
+export const courses = [
   {
     id: "digital-marketing",
     name: "Digital Marketing",
     image: Digitalmarketing,
     duration: "35 Days",
     price: 9999,
-    description: "Learn social media marketing, Meta & Google Ads, content strategy, and campaign analytics."
+    description: "Learn social media marketing, Meta & Google Ads, content strategy, and campaign analytics.",
+    overview: "A practical 35-day course that takes you from digital marketing basics to Canva designs, short videos, AI tools, Facebook & Instagram ads, and WhatsApp automation.",
+    whatYouLearn: [
+      "Digital marketing fundamentals",
+      "Graphic design with Canva",
+      "Short video making in Canva",
+      "AI tools for content creation",
+      "Facebook & Instagram ads",
+      "Facebook boosting",
+      "WhatsApp automation",
+    ],
+    whoIsThisFor: "Students, job seekers, freelancers, and small business owners who want to promote products or services online. No prior experience needed.",
+    features: commonFeatures,
   },
   {
     id: "ai-tools-prompt-engineering",
@@ -16,25 +35,53 @@
     image: Digitalmarketing,
     duration: "15 Days",
     price: 9999,
-    description: "Master generative AI workflows, effective prompt design, and productivity automation tools."
+    description: "Master generative AI workflows, effective prompt design, and productivity automation tools.",
+    overview: "A short, hands-on course on using AI tools and writing effective prompts to work faster in study, business, and content creation.",
+    whatYouLearn: [
+      "How generative AI works",
+      "Writing effective prompts",
+      "AI tools for text, image, and video",
+      "Automating daily work with AI",
+      "Using AI for research and content",
+    ],
+    whoIsThisFor: "Students, professionals, content creators, and business owners who want to save time and increase productivity with AI. No technical background required.",
+    features: commonFeatures,
   },
   {
     id: "web-design-development",
     name: "Web Design & Development",
-        image: Webdesign,
-
+    image: Webdesign,
     duration: "2 Months",
     price: 17900,
-    description: "Learn HTML, CSS, Tailwind CSS, JavaScript, and React to build modern responsive websites."
+    description: "Learn HTML, CSS, Tailwind CSS, JavaScript, and React to build modern responsive websites.",
+    overview: "Learn to build modern, responsive websites from scratch, starting with HTML and CSS and moving up to JavaScript and React.",
+    whatYouLearn: [
+      "HTML5 and CSS3",
+      "Responsive design with Tailwind CSS",
+      "JavaScript fundamentals",
+      "Building apps with React",
+      "Real website projects",
+    ],
+    whoIsThisFor: "Beginners, students, and career changers who want to become web developers or build their own websites. No coding experience needed.",
+    features: commonFeatures,
   },
   {
     id: "app-development",
     name: "App Development",
-        image: Digitalmarketing,
-
+    image: Digitalmarketing,
     duration: "1 Month",
     price: 14900,
-    description: "Build cross-platform mobile applications with modern UI components, APIs, and state management."
+    description: "Build cross-platform mobile applications with modern UI components, APIs, and state management.",
+    overview: "Build real cross-platform mobile apps for Android and iOS using React Native, with clean UI, API integration, and state management.",
+    whatYouLearn: [
+      "React Native basics",
+      "Building modern mobile UI",
+      "Navigation and state management",
+      "Connecting apps to APIs",
+      "Publishing-ready app project",
+    ],
+    whoIsThisFor: "Students and developers with basic JavaScript knowledge who want to build mobile apps and start a career in app development.",
+    features: commonFeatures,
   },
   {
     id: "python-programming",
@@ -42,7 +89,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 24900,
-    description: "Learn core Python syntax, object-oriented programming, data structures, and scripting."
+    description: "Learn core Python syntax, object-oriented programming, data structures, and scripting.",
+    overview: "Start programming with Python, from core syntax to object-oriented programming, data structures, and practical scripting.",
+    whatYouLearn: [
+      "Python syntax and logic",
+      "Functions and data structures",
+      "Object-oriented programming",
+      "File handling and scripting",
+      "Problem solving with projects",
+    ],
+    whoIsThisFor: "Complete beginners, students, and anyone who wants to learn programming. Python is also a good first step toward data and automation work.",
+    features: commonFeatures,
   },
   {
     id: "graphic-design",
@@ -50,7 +107,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 17900,
-    description: "Master Adobe Photoshop, Illustrator, branding, typography, and social media visual design."
+    description: "Master Adobe Photoshop, Illustrator, branding, typography, and social media visual design.",
+    overview: "Learn professional design with Photoshop, Illustrator, and Canva, from logos and branding to posters and social media graphics.",
+    whatYouLearn: [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Logo and branding design",
+      "Typography and color theory",
+      "Social media and print designs",
+    ],
+    whoIsThisFor: "Beginners, creative students, and freelancers who want to become graphic designers or create designs for their own business.",
+    features: commonFeatures,
   },
   {
     id: "video-editing",
@@ -58,7 +125,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 24900,
-    description: "Learn professional video cutting, color grading, motion graphics, and audio mixing."
+    description: "Learn professional video cutting, color grading, motion graphics, and audio mixing.",
+    overview: "Learn to edit videos professionally, from cutting and color grading to motion graphics and audio mixing.",
+    whatYouLearn: [
+      "Video cutting and timeline editing",
+      "Color correction and grading",
+      "Motion graphics and titles",
+      "Audio mixing and cleanup",
+      "Editing for YouTube, reels, and ads",
+    ],
+    whoIsThisFor: "Content creators, YouTubers, students, and freelancers who want to edit videos professionally. No prior editing experience needed.",
+    features: commonFeatures,
   },
   {
     id: "wordpress-development",
@@ -66,7 +143,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 17900,
-    description: "Build and customize dynamic websites, themes, plugins, and e-commerce stores using WordPress."
+    description: "Build and customize dynamic websites, themes, plugins, and e-commerce stores using WordPress.",
+    overview: "Build and customize complete websites with WordPress, including themes, plugins, and online stores, without heavy coding.",
+    whatYouLearn: [
+      "WordPress setup and hosting",
+      "Themes and page builders",
+      "Plugins and customization",
+      "E-commerce store with WooCommerce",
+      "Website security and maintenance",
+    ],
+    whoIsThisFor: "Beginners, freelancers, and business owners who want to build professional websites quickly for themselves or for clients.",
+    features: commonFeatures,
   },
   {
     id: "seo",
@@ -74,7 +161,17 @@
     image: Digitalmarketing,
     duration: "15 Days",
     price: 9999,
-    description: "Learn keyword research, on-page and off-page optimization, technical SEO, and search ranking strategies."
+    description: "Learn keyword research, on-page and off-page optimization, technical SEO, and search ranking strategies.",
+    overview: "Learn how to rank websites on Google with keyword research, on-page and off-page SEO, and technical optimization.",
+    whatYouLearn: [
+      "Keyword research",
+      "On-page optimization",
+      "Off-page SEO and backlinks",
+      "Technical SEO",
+      "Tracking search rankings",
+    ],
+    whoIsThisFor: "Digital marketers, website owners, bloggers, and freelancers who want more traffic from search engines.",
+    features: commonFeatures,
   },
   {
     id: "data-analytics-excel-power-bi",
@@ -82,7 +179,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 24900,
-    description: "Analyze business data, build interactive dashboards, and create reports using Excel and Power BI."
+    description: "Analyze business data, build interactive dashboards, and create reports using Excel and Power BI.",
+    overview: "Learn to analyze business data and present it clearly with advanced Excel, interactive Power BI dashboards, and reports.",
+    whatYouLearn: [
+      "Advanced Excel formulas and tools",
+      "Data cleaning and analysis",
+      "Pivot tables and charts",
+      "Power BI dashboards",
+      "Business report creation",
+    ],
+    whoIsThisFor: "Students, office professionals, and job seekers who want to work with data and build a career in analytics or business reporting.",
+    features: commonFeatures,
   },
   {
     id: "ui-ux-design",
@@ -90,7 +197,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 24900,
-    description: "Design user-centered interfaces, wireframes, design systems, and interactive prototypes in Figma."
+    description: "Design user-centered interfaces, wireframes, design systems, and interactive prototypes in Figma.",
+    overview: "Learn to design user-friendly apps and websites in Figma, from research and wireframes to design systems and prototypes.",
+    whatYouLearn: [
+      "UI/UX design principles",
+      "User research and wireframing",
+      "Figma from basics to advanced",
+      "Design systems and components",
+      "Interactive prototypes",
+    ],
+    whoIsThisFor: "Designers, developers, and beginners who want to build a career in UI/UX or design better apps and websites.",
+    features: commonFeatures,
   },
   {
     id: "cyber-security",
@@ -98,7 +215,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 17900,
-    description: "Learn network security fundamentals, vulnerability assessment, ethical hacking, and threat protection."
+    description: "Learn network security fundamentals, vulnerability assessment, ethical hacking, and threat protection.",
+    overview: "Learn how to protect systems and networks, covering security fundamentals, vulnerability assessment, and ethical hacking.",
+    whatYouLearn: [
+      "Network security fundamentals",
+      "Vulnerability assessment",
+      "Ethical hacking basics",
+      "Threat detection and protection",
+      "Safe online practices",
+    ],
+    whoIsThisFor: "IT students, network enthusiasts, and anyone who wants to start a career in cyber security. Basic computer knowledge is enough.",
+    features: commonFeatures,
   },
   {
     id: "freelancing-upwork-training",
@@ -106,7 +233,17 @@
     image: Digitalmarketing,
     duration: "2 Months",
     price: 14900,
-    description: "Learn profile optimization, proposal writing, client communication, and earning on Upwork."
+    description: "Learn profile optimization, proposal writing, client communication, and earning on Upwork.",
+    overview: "Learn how to start freelancing and earn online, from building a strong Upwork profile to winning and handling clients.",
+    whatYouLearn: [
+      "Upwork profile optimization",
+      "Writing winning proposals",
+      "Finding the right jobs",
+      "Client communication",
+      "Payments and getting reviews",
+    ],
+    whoIsThisFor: "Students and skilled people who want to earn online as freelancers. You should have at least one skill to offer, such as design, development, or writing.",
+    features: commonFeatures,
   },
   {
     id: "tally-with-accounting",
@@ -114,6 +251,16 @@
     image: Digitalmarketing,
     duration: "3 Months",
     price: null,
-    description: "Learn computerized accounting, inventory management, VAT/taxation, and financial reporting in Tally."
-  }
+    description: "Learn computerized accounting, inventory management, VAT/taxation, and financial reporting in Tally.",
+    overview: "Learn practical accounting with Tally, covering day-to-day entries, inventory, VAT/taxation, and financial reports.",
+    whatYouLearn: [
+      "Accounting fundamentals",
+      "Voucher entries in Tally",
+      "Inventory management",
+      "VAT and taxation",
+      "Financial reports",
+    ],
+    whoIsThisFor: "Commerce students, accountants, and job seekers who want to work in accounting or manage the books of a business.",
+    features: commonFeatures,
+  },
 ];
