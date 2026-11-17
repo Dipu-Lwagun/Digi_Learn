@@ -16,6 +16,7 @@ export const colors = {
   text: '#0E8A33',
   muted: '#94A3B8',
   white: '#FFFFFF',
+  footerwhite: '#CFE9D8',
 
   // UI Colors
   border: '#E2E8F0',

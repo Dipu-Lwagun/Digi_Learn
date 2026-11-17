@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer' 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -10,7 +11,10 @@ import Contact from './Pages/Contact'
 const App = () => {
   return (
     <BrowserRouter>
+    <div className="min-h-screen flex flex-col">
+
     <Navbar />
+<main className='flex-1'>
 
     <Routes>
       <Route path='/' element={<Home />} />
@@ -19,6 +23,11 @@ const App = () => {
       <Route path='/why-choose-us' element={<WhyChooseUs />} />
       <Route path='/contact' element={<Contact />} />
     </Routes>
+    </main>
+
+    <Footer />
+        </div>
+
     </BrowserRouter>
   )
 }
