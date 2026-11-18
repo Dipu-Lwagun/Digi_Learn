@@ -5,6 +5,12 @@ export const ContactDetails = [
         contactnbr: "9747540037",
         email: "digilearninfotechnp@gmail.com"
     },
+       {
+        office: "Branch",
+        location: "Kathmandu, Balaju",
+        contactnbr: "9747962585",
+        email: "digilearninfotechnp@gmail.com"
+    },
     {
         office: "Branch",
         location: "Butwal, Milan Chowk, Rupandehi",
@@ -17,10 +23,5 @@ export const ContactDetails = [
         contactnbr: "9762650439",
         email: "digilearninfotechnp@gmail.com"
     },
-    {
-        office: "Branch",
-        location: "Kathmandu, Balaju",
-        contactnbr: "9747962585",
-        email: "digilearninfotechnp@gmail.com"
-    }
+ 
 ];
