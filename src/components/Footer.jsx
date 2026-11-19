@@ -7,7 +7,7 @@ import { ContactDetails } from "../data/Contactdetails";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-primary  py-4 mt-5">
+      <footer className="bg-primary  py-4">
         <div className="flex justify-between items-center  px-10">
           <div>
             <img src={Logo} alt="Logo" className="h-50" />
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div>
             <h1 className="text-subheading font-medium">Pages</h1>
-            <div>
+            <nav>
               {navLinks.map((item) => (
                 <NavLink
                   key={item.name}
@@ -37,7 +37,7 @@ const Footer = () => {
                   <h2>{item.name}</h2>
                 </NavLink>
               ))}
-            </div>
+            </nav>
           </div>
 
           {/* contact section  */}

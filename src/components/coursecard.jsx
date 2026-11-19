@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Coursecard = () => {
 const navigate =useNavigate();
 
-  const habdleDetails =(courseid) =>{
+  const handleDetails =(courseid) =>{
     navigate(`/course/${courseid}`)
     
   }
@@ -17,19 +17,19 @@ const navigate =useNavigate();
           {courses.map((course) => (
             <div
               key={course.id}
-              className=" bg-background-light p-4 rounded-lg shadow-xl relative h-100 "
+              className=" group bg-background-light p-4 rounded-lg shadow-xl relative h-100 transition-all duration-300  hover:skew-y-1  hover:z-10 hover:shadow-2xl "
             >
-              <div className=" relative">
+              <div className=" relative overflow-hidden rounded-[10px]">
                 <img
                   src={course.image}
                   alt={course.name}
-                  className="w-full h-48 object-cover rounded-[10px]"
+                  loading="lazy"
+                  className="w-full h-48 object-cover rounded-[10px] transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="w-full h-48 bg-linear-to-t from-primary to-accent-[0%] absolute top-0 left-0  ">
+                <div className=" absolute inset-0  h-48 bg-linear-to-t from-primary to-accent/0 duration-700 group-hover:scale-110   " />
                   <h1 className="text-heading  bg-subheading p-2 rounded-full  font-bold absolute top-2 right-2">
                     {course.duration}
                   </h1>
-                </div>
 
                 <h1 className="text-xl font-bold text-primary mt-2 text-center">
                   {course.name}
@@ -39,7 +39,7 @@ const navigate =useNavigate();
               </div>
                 <hr className="absolute bottom-12 left-7 right-7 border-gray-300" />
               
-              <button  onClick={()=> habdleDetails(course.id)} className=" absolute right-1 bottom-1 bg-accent rounded-[10px] text-white p-1 " >More details</button>
+              <button  onClick={()=> handleDetails(course.id)} className=" absolute right-1 bottom-1 bg-accent rounded-[10px] text-white p-1 " >More details</button>
             </div>
           ))}
         </div>
