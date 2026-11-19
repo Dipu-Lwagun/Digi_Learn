@@ -1,6 +1,7 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import Contactform from '../components/Contactform'
+import Map from '../components/map'
 
 const Contact = () => {
   return (
@@ -17,8 +18,9 @@ const Contact = () => {
         </p>
       </section>
   
-      <section  className='pt-20 bg-[#CFE9D8]'>
+      <section  className='py-10 bg-[#CFE9D8]'>
         <Contactform />
+        <Map />
       </section>
         
       </main>

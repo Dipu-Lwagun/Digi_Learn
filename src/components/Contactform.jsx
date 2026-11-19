@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ContactDetails } from "../data/Contactdetails";
+
+
 
 const Contactform = () => {
   const [success, setSuccess] = useState(false);
@@ -40,9 +43,9 @@ const onSubmit = async (data) => {
 
   return (
     <>
-      <main>
-        <section className="px-10">
-          <div className="bg-white rounded-[20px] w-full max-w-2xl">
+      <main className='flex justify-around px-20'>
+        <section className=" w-[60%]  ">
+          <div className="bg-white rounded-[20px] ">
             <h2 className="text-center font-bold text-2xl">
               Send us a message
             </h2>
@@ -168,6 +171,18 @@ const onSubmit = async (data) => {
                 Send Message
               </button>
             </form>
+          </div>
+        </section>
+        <section>
+          <div className="">
+            {ContactDetails.map((item)=>(
+              <div className="bg-white m-4 p-4 rounded-[20px] " >
+                <p className="text-accent font-light text-sm">{item.office} Office</p>
+                <h2 className="text-black font-bold text-base " >{item.location}</h2>
+                 <a href={`tel:${item.contactnbr}`} className='text-accent font-bold text-[18px]' > {item.contactnbr}
+                  </a>
+              </div>
+              ))}
           </div>
         </section>
       </main>

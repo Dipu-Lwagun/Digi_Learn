@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { courses } from "../data/courses";
 import { Choose } from "../data/choose";
-
+import { ContactDetails } from "../data/Contactdetails";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -124,27 +124,79 @@ const Home = () => {
       {/* WhyChooseUs section */}
 
       <section className="bg-heading py-20">
-                <div className="text-center  ">
-                  <h2 className="text-subheading text-sm font-bold uppercase ">Why Choose Us</h2>
-                  <p className="text-white font-bold text-5xl mt-4">
-                    Learn with confidence
-                  </p>
-                </div>
-                <div className="flex justify-around mt-10 px-10" >
-                  {Choose.map((item, index) => (
-                    <div key={index} className="bg-primary p-5  flex flex-col gap-2 rounded-[10px] w-[20%] ">
+        <div className="text-center  ">
+          <h2 className="text-subheading text-sm font-bold uppercase ">
+            Why Choose Us
+          </h2>
+          <p className="text-white font-bold text-5xl mt-4">
+            Learn with confidence
+          </p>
+        </div>
+        <div className="flex justify-around mt-10 px-10">
+          {Choose.map((item, index) => (
+            <div
+              key={index}
+              className="bg-primary p-5  flex flex-col gap-2 rounded-[10px] w-[20%] "
+            >
               <h2 className="bg-subheading  p-2 w-10 text-center justify-center items-center rounded-full font-bold text-primary">
-                        {item.id}</h2>
-                      <h2 className="text-white font-bold text-lg">
-                        {item.title}
-                      </h2>
-                      <article className="font-normal text-[#CFE9D8] text-base">
-                        {item.description}
-                      </article>
-                    </div>
-                  ))}
+                {item.id}
+              </h2>
+              <h2 className="text-white font-bold text-lg">{item.title}</h2>
+              <article className="font-normal text-[#CFE9D8] text-base">
+                {item.description}
+              </article>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* about */}
+      <section className="mb-10">
+        <div className="flex justify-around items-center bg-white mt-20 ">
+          <div className="bg-primary h-80 w-130 rounded-[20px]"></div>
+          <div className="w-150">
+            <h2 className=" font-medium text-sm text-accent ">ABOUT US</h2>
+            <h2 className="text-black font-bold text-5xl mt-4">
+              Digi Learn Info Tech{" "}
+            </h2>
+            <article className="text-muted font-normal text-lg mt-4">
+              We are an IT training institute in Kathmandu helping students
+              build practical skills in digital marketing, design, web,
+              security, video editing and UI/UX using AI tools, expert mentors
+              and real projects.
+            </article>
+          </div>
+        </div>
+      </section>
+      {/* contact */}
+      <section className="mb-10">
+        <div className=" bg-[#CFE9D8] py-20 ">
+          <div className="text-center">
+            <h2 className=" font-medium text-sm text-accent ">Contact</h2>
+            <h2 className="text-black font-bold text-5xl mt-4">
+              Visit us or call to enroll{" "}
+            </h2>
+            <div className=" flex justify-around mt-10 ">
+              {ContactDetails.map((item) => (
+                <div className="bg-white shadow m-4 p-4 rounded-[20px] w-[25%]  ">
+                  <p className="text-accent font-light text-sm">
+                    {item.office} Office
+                  </p>
+                  <h2 className="text-black font-bold text-base ">
+                    {item.location}
+                  </h2>
+                  <a
+                    href={`tel:${item.contactnbr}`}
+                    className="text-accent font-bold text-[18px]"
+                  >
+                    {" "}
+                    {item.contactnbr}
+                  </a>
                 </div>
-              </section>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
