@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ContactDetails } from "../data/Contactdetails";
-
-
+import { supabase } from "../lib/supabase";
 
 const Contactform = () => {
   const [success, setSuccess] = useState(false);
@@ -14,38 +13,37 @@ const Contactform = () => {
     formState: { errors },
   } = useForm();
 
-  
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbx09854QgcLMRt5_JGdKGdaMjI7H-ZZEuF8roayBNZvFStHSvVpI4yVtjTQgTNb8BAOpg/exec"
-const onSubmit = async (data) => {
-  try {
-    setSuccess(false);
+  const onSubmit = async (data) => {
+    try {
+      setSuccess (false);
 
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain",
-      },
-      body: JSON.stringify(data),
-    });
-
-    setSuccess(true);
-    alert("Your message has been submitted!");
-    reset();
-
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Something went wrong. Please try again.");
-  }
-};
-
+      const{error}= await supabase
+      .from("contacts")
+      .insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      });
+      if (error){
+    throw error;
+      }
+      setSuccess (true);
+      alert("Your message has been submitted successfully! ");
+      reset();
+    } catch (error){
+      console.error ("supabase insert error: ", error.message)
+      alert("Failed to send message. Please try again later.");
+    }
+    
+    
+  };
 
   return (
     <>
-      <main className='flex justify-around px-20'>
-        <section className=" w-[60%]  ">
-          <div className="bg-white rounded-[20px] ">
+      <main className="flex justify-around px-20">
+        <section className="w-[60%]">
+          <div className="bg-white rounded-[20px]">
             <h2 className="text-center font-bold text-2xl">
               Send us a message
             </h2>
@@ -56,7 +54,9 @@ const onSubmit = async (data) => {
             >
               {/* Full Name */}
               <div>
-                <label className="text-black font-semibold">Full Name</label>
+                <label className="text-black font-semibold">
+                  Full Name
+                </label>
 
                 <input
                   type="text"
@@ -80,7 +80,9 @@ const onSubmit = async (data) => {
 
               {/* Email */}
               <div>
-                <label className="text-black font-semibold">Email</label>
+                <label className="text-black font-semibold">
+                  Email
+                </label>
 
                 <input
                   type="email"
@@ -104,7 +106,9 @@ const onSubmit = async (data) => {
 
               {/* Phone */}
               <div>
-                <label className="text-black font-semibold">Phone Number</label>
+                <label className="text-black font-semibold">
+                  Phone Number
+                </label>
 
                 <input
                   type="tel"
@@ -113,13 +117,8 @@ const onSubmit = async (data) => {
                   placeholder="9800000000"
                   {...register("phone", {
                     required: "Phone number is required",
-                    minLength: {
-                      value: 10,
-
-                      message: "Phone number must be 10 digits",
-                    },
-                    maxLength: {
-                      value: 10,
+                    pattern: {
+                      value: /^[0-9]{10}$/,
                       message: "Phone number must be 10 digits",
                     },
                   })}
@@ -134,7 +133,9 @@ const onSubmit = async (data) => {
 
               {/* Message */}
               <div>
-                <label className="text-black font-semibold">Message</label>
+                <label className="text-black font-semibold">
+                  Message
+                </label>
 
                 <textarea
                   placeholder="How can we help you?"
@@ -173,16 +174,31 @@ const onSubmit = async (data) => {
             </form>
           </div>
         </section>
+
+        {/* Contact Details */}
         <section>
-          <div className="">
-            {ContactDetails.map((item)=>(
-              <div className="bg-white m-4 p-4 rounded-[20px] " >
-                <p className="text-accent font-light text-sm">{item.office} Office</p>
-                <h2 className="text-black font-bold text-base " >{item.location}</h2>
-                 <a href={`tel:${item.contactnbr}`} className='text-accent font-bold text-[18px]' > {item.contactnbr}
-                  </a>
+          <div>
+            {ContactDetails.map((item) => (
+              <div
+                key={item.office}
+                className="bg-white m-4 p-4 rounded-[20px]"
+              >
+                <p className="text-accent font-light text-sm">
+                  {item.office} Office
+                </p>
+
+                <h2 className="text-black font-bold text-base">
+                  {item.location}
+                </h2>
+
+                <a
+                  href={`tel:${item.contactnbr}`}
+                  className="text-accent font-bold text-[18px]"
+                >
+                  {item.contactnbr}
+                </a>
               </div>
-              ))}
+            ))}
           </div>
         </section>
       </main>

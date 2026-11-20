@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { courses } from "../data/courses";
 
 const CourseDetails = () => {
@@ -17,6 +17,13 @@ const CourseDetails = () => {
       </div>
     );
   }
+
+  const navigate = useNavigate();
+  const handleApplyNow = () => {
+    navigate("/Apply", {
+      state: { course: Course },
+    });
+  };
 
   return (
     <>
@@ -102,18 +109,21 @@ const CourseDetails = () => {
             <p className="text-muted font-normal text-[17px] "> Job support </p>
             <p className="text-black font-semibold text-[17px] "> 100% </p>
           </div>
-                <hr className="  border-gray-300 mt-2"  />
+          <hr className="  border-gray-300 mt-2" />
 
-          <button className="mt-5 w-full bg-secondary text-white font-bold py-4 rounded-[10px] hover:bg-accent hover:text-black transition-all duration-300 ">
-           Apply Now →
+          <button
+            onClick={handleApplyNow}
+            className="mt-5 w-full bg-secondary text-white font-bold py-4 rounded-[10px] hover:bg-accent hover:text-black transition-all duration-300 "
+          >
+            Apply Now →
           </button>
           <button className="mt-5 w-full text-white font-bold py-4 border border-secondary rounded-[10px] hover:bg-accent hover:text-black transition-all duration-300 ">
             <a
-          href="tel:+9779747540037"
-          className="text-secondary font-semibold hover:underline"
-        >
-         call 9747540037
-        </a>
+              href="tel:+9779747540037"
+              className="text-secondary font-semibold hover:underline"
+            >
+              call 9747540037
+            </a>
           </button>
         </div>
       </div>

@@ -9,6 +9,8 @@ import WhyChooseUs from "./Pages/why-choose-us";
 import Contact from "./Pages/Contact";
 import CourseDetails from "./Pages/CourseDetails";
 import CTA from "./components/CTA";
+import "./lib/testsupabase"
+import Apply from "./Pages/Apply";
 
 const App = () => {
   return (
@@ -23,6 +25,7 @@ const App = () => {
             <Route path="/why-choose-us" element={<WhyChooseUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/course/:id" element={<CourseDetails />} />
+            <Route path="/apply" element={<Apply />} />
           </Routes>
         </main>
         <CTA />
